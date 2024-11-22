@@ -298,7 +298,7 @@ class CoordMap:
                 # if i == 0:
                 #     d_matrix = d_matrix_xyz + d_matrix_rpy - ori_rot_dist - ori_trans_dist
                 # else:
-                d_matrix = d_matrix_xyz + 0*d_matrix_rpy
+                d_matrix = d_matrix_xyz + d_matrix_rpy
                 d_matrix_list.append(d_matrix)
 
         coord_dist_map = np.stack(d_matrix_list, axis=2)

@@ -37,7 +37,7 @@ def train(m, y, model, clusters, stop=200, learning_rate=0.0002, scheduler_patie
     import matplotlib.pyplot as plt
     
     # optimizer
-    plot_loss = True
+    plot_loss = False
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     
     # Add learning rate scheduler
@@ -399,7 +399,7 @@ if __name__ == "__main__":
     parser.add_argument('--normal', action='store_true')
     parser.add_argument('--num_cameras', type=int, default=20) # number of cameras
     parser.add_argument('--step_size', type=int, default=4) # motor step size
-    parser.add_argument('--num_video', type=int, default=10)
+    parser.add_argument('--num_video', type=int, default=5)
     parser.add_argument('--r', type=str, default='q', choices=['q', 'rpy', 'dq', '6d']) # rotation representation
     args = parser.parse_args()
 
