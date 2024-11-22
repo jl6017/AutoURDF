@@ -132,96 +132,7 @@ def draw_silhouette_scores():
     create_robot_plot(high_range_data, 
                      'DoF Evaluation (Complex Robots)', 
                      'silhouette_scores_complex_robots')
-# def visualize_kinematic_tree_with_axes(cm, cluster_idx, kinematic_tree, joint_data, time_step=0):
-#     # Set up color map
-#     color_map = plt.get_cmap('jet')
-#     colors = color_map(np.linspace(0, 1, len(cluster_idx)))[:,:3]
 
-#     # reverse the color map
-#     colors = colors[::-1]
-
-#     color_seq = np.zeros(cm.num_coords)
-
-#     for i, cluster in enumerate(cluster_idx):
-#         color_seq[list(cluster)] = i
-
-#     # Create point clouds for each cluster
-#     pcds = []
-#     cluster_pcds = cm.clusters[time_step]
-
-#     matrices = [xyzquat_to_matrix_scipy(coord[:3], coord[3:]) for coord in cm.coords[time_step]]
-#     for i in range(cm.num_coords):
-#         cluster_np = cluster_pcds[str(i)]
-#         cluster_np = cluster_np @ matrices[i][:3, :3].T + matrices[i][:3, 3]
-#         pcd = o3d.geometry.PointCloud()
-#         pcd.points = o3d.utility.Vector3dVector(cluster_np)
-#         pcd.paint_uniform_color(colors[int(color_seq[i])])
-#         pcds.append(pcd)
-
-#     # Create cylinders for joint axes
-#     vis = []
-#     cy = True
-#     if cy:
-#         for parent, children in kinematic_tree.items():
-#             parent_color = colors[parent]
-#             for child in children:
-#                 # Find the corresponding joint data
-#                 joint = next(j for j in joint_data if j['clusters'] == (parent, child['child']) or j['clusters'] == (child['child'], parent))
-
-#                 # get the global joint position and axis
-#                 joint_ori= joint['global_axis']
-#                 #print(joint_ori)
-#                 joint_pos = joint['global_pos']
-
-#                 # Create a cylinder
-#                 cylinder = o3d.geometry.TriangleMesh.create_cylinder(radius=0.01, height=0.2)
-#                 cylinder.compute_vertex_normals()
-#                 cylinder.paint_uniform_color(parent_color)  # Same color as parent cluster link
-
-#                 # Rotate the cylinder to align with the global axis
-#                 cylinder_axis = np.array([0, 0, 1])
-#                 rotation_axis = np.cross(cylinder_axis, joint_ori)
-#                 rotation_angle = np.arccos(np.dot(cylinder_axis, joint_ori))
-#                 R0 = o3d.geometry.get_rotation_matrix_from_axis_angle(rotation_axis * rotation_angle)
-#                 cylinder.rotate(R0, center=(0, 0, 0))
-
-#                 # Position the cylinder
-#                 cylinder.translate(joint_pos)
-
-#                 vis.append(cylinder)
-
-#     else:
-#         for parent, children in kinematic_tree.items():
-#             parent_color = colors[parent]
-#             for child in children:
-#                 # Find the corresponding joint data
-#                 joint = next(j for j in joint_data if j['clusters'] == (parent, child['child']) or j['clusters'] == (child['child'], parent))
-
-#                 # Get the global joint position and axis
-#                 joint_axis = joint['global_axis']
-#                 joint_pos = joint['global_pos']
-
-#                 # Create a coordinate frame
-#                 coord_frame = o3d.geometry.TriangleMesh.create_coordinate_frame(size=0.1, origin=joint_pos)
-
-#                 # Rotate the coordinate frame to align Z-axis with the joint axis
-#                 z_axis = np.array([0, 0, 1])
-#                 rotation_axis = np.cross(z_axis, joint_axis)
-#                 rotation_angle = np.arccos(np.dot(z_axis, joint_axis))
-#                 R0 = o3d.geometry.get_rotation_matrix_from_axis_angle(rotation_axis * rotation_angle)
-#                 coord_frame.rotate(R0, center=joint_pos)
-
-#                 # Color the coordinate frame (optional, as coordinate frames usually have standard colors)
-#                 # If you want to keep a uniform color, you can uncomment the following line:
-#                 # coord_frame.paint_uniform_color(parent_color)
-
-#                 vis.append(coord_frame)
-
-#     # Create coordinate frame
-#     #coord_frame = o3d.geometry.TriangleMesh.create_coordinate_frame(size=0.2, origin=[0, 0, 0])
-
-#     # Visualize
-#     o3d.visualization.draw_geometries(pcds + vis)
 
 def visualize_kinematic_tree(cm, links, joint_data, vis_time_step=0, scale=1, vis_params=None, robot=None):
     R_cylinder = 0.015 * scale
@@ -430,19 +341,5 @@ def matrix_animation(matrices):
 
 
 if __name__ == "__main__":
-    # data_path = 'PointCloud/temp/data_20seg_400p_2023s/'
-    # cm = CoordMap(data_path) # cm.coords: (time-step, num_points, 6), np array
-    # coordinate_animation(cm.coords)
 
-    # data_path = 'PointCloud/temp(0)_allergo/data_30seg_800p_7s/'
-    # import glob
-
-    # files = sorted(glob.glob(data_path + 'matrix/*.npy'))
-    # matrices = []
-    # for file in files:
-    #     matrices.append(np.load(file))
-    # matrices = np.array(matrices)
-    # print(matrices.shape)
-
-    # matrix_animation(matrices)
     draw_silhouette_scores()

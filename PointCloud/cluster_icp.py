@@ -190,39 +190,3 @@ def masked_icp(clusters_local, clusters_world, step_pc_np, matrices, visual=Fals
 
     return w_clusters_np, new_matrices
 
-
-
-
-if __name__ == "__main__":
-    seg = Segments('data/4dof_800pixel_disc/')
-    seg.visualize(seg.pc_list)
-    cluster_pc = seg.k_means_cluster(0, 10)
-    # next_pc = seg.pc_list[1]
-
-    # for c_pc in cluster_pc:
-    #     print(np.asarray(c_pc.points).shape)
-    #     # run icp
-    #     reg_p2p = o3d.pipelines.registration.registration_icp(c_pc, next_pc, 10, np.eye(4), o3d.pipelines.registration.TransformationEstimationPointToPoint())
-    #     print(reg_p2p.transformation)
-    #     draw_registration_result(source=c_pc, target=next_pc, transformation=reg_p2p.transformation)
-
-
-    # kinmatics check
-    # get fk transformation
-    i_segs = []
-    t_segs = []
-    for center, segment in zip(seg.init_coord_list, seg.init_segment_list):
-        i_segs.append(segment)
-        matrix = seg.xyzrpy_to_transformation(center[:3], center[3:])
-        # transform the segment
-        # expend the segment to 4d
-        segment = np.hstack([segment, np.ones((segment.shape[0], 1))])
-        transformed_segment = segment @ matrix.T
-        print(transformed_segment.shape)
-        t_segs.append(transformed_segment[:, :3])
-
-
-    # visualize
-    seg.visualize([o3d.geometry.PointCloud(o3d.utility.Vector3dVector(seg)) for seg in i_segs])
-    seg.visualize([o3d.geometry.PointCloud(o3d.utility.Vector3dVector(seg)) for seg in t_segs])
-

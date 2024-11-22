@@ -429,69 +429,6 @@ def angle_list(num_step, step_size, dof, joint_limits, scale, seed_i):
 
     return angle_list
 
-def angle_list2(num_step, step_size, dof, joint_limits, scale, seed_i):
-    """
-    Generate a list of joint angles for data collection
-    1. Randomly sample a set of target joint angles within the joint limits. (dof,)
-    2. For each Joint, linearly interpolate the joint angles between start and target. (num_steps, dof)
-    3. Update the start joint angles for the next epoch.
-
-    Args:
-    - num_step: int, number of steps
-    - step_size: int, the max degree change for each step
-    - dof: int, number of degrees of freedom
-    - joint_limits: np.array(dof, 2), joint limits for each joint
-    - scale: list, scale factor for joint limits
-
-    Returns:
-    - angle_list: np.array, (num_steps, dof)
-    """
-    start_rate = 0.5 # start from 30% of the limit
-    low_step_limit = 6 # at least 3 continuous steps
-
-    np.random.seed(seed_i)
-    joint_limits = joint_limits * 180 / np.pi # convert to degree
-    scaled_limits = joint_limits * scale.reshape(-1, 1) # (dof, 2)
-    abs_scaled_limit = np.abs(scaled_limits[:, 1] - scaled_limits[:, 0]) # (dof,)
-    print('scaled_limits:', abs_scaled_limit)
-    
-    # start = np.zeros(dof) # start from 0
-    # start from mid point
-    # start = (scaled_limits[:, 0] + scaled_limits[:, 1]) / 2 # (dof,)
-    
-    start = scaled_limits[:, 0] + start_rate * (scaled_limits[:, 1] - scaled_limits[:, 0]) # start from 30% of the limit
-
-    angle_list = []
-    for j_id in range(dof):
-        angle_list_i = []
-        while len(angle_list_i) < num_step:
-            # ensure target-start > 0.5 * abs_scaled_limit[j_id]
-            if len(angle_list_i) == 0:
-                direction = np.random.choice([-1, 1])
-            else:
-                direction = -direction
-
-            while True:
-                # pick a random direction, and a random number of continuous steps
-                
-                n_continuous_steps = np.random.randint(low_step_limit, num_step)
-                
-                step_size_rand = step_size * (1 + np.random.rand()) # if step_size=5, then 5-10
-                target_i = start[j_id] + direction * n_continuous_steps * step_size_rand
-                # that target within the limit
-
-                if target_i > scaled_limits[j_id][0] and target_i < scaled_limits[j_id][1]:
-                    break
-
-            angle_list_i += [start[j_id] + direction * step_size_rand * i for i in range(n_continuous_steps)] # (num_steps,), not include the target
-            start[j_id] = target_i # update the start for the next target
-        angle_list.append(np.array(angle_list_i)[:num_step])
-
-    angle_list = np.vstack(angle_list).T * np.pi / 180 # convert to radian
-
-    return angle_list
-
-
 def animate_raw_pcd(data_path, num_step):
     """
     Animate the raw PCD data from an angled view with fixed camera settings.
