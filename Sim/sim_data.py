@@ -47,8 +47,8 @@ class SimEnv:
             urdf_path, base_position, 
             p.getQuaternionFromEuler(base_orientation), 
             globalScaling = global_scale,
-            # useFixedBase=1, flags=p.URDF_USE_SELF_COLLISION) # add self collision flag
-             useFixedBase=1)  # option in evalution, close self collision, allegro
+            useFixedBase=1, flags=p.URDF_USE_SELF_COLLISION) # add self collision flag
+            #  useFixedBase=1)  # option in evalution, close self collision, allegro
 
         self.joint_params, self.joint_id_list = self._setup_joint_control()
         self.joint_list = list(self.joint_params.keys())
