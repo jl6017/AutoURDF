@@ -2,8 +2,8 @@
 
 ## Installation
 ```
-conda create -n v2urdf python=3.9
-conda activate v2urdf
+conda create -n autourdf python=3.9
+conda activate autourdf
 ```
 ### 1. Pytorch, Pytorch3D
 V2URDF is implemented using pytorch and [pytorch3D](https://github.com/facebookresearch/pytorch3d/tree/main).\
