@@ -1,54 +1,50 @@
-# AutoURDF
+# AutoURDF: Unsupervised Robot Modeling from Point Cloud Frames Using Cluster Registration
 
-## Installation
+## [Project page](https://jl6017.github.io/AutoURDF/) | [Paper](https://arxiv.org/abs/2412.05507)
+
+![Teaser image](assets/teaser.png)
+
+This repository contains the official implementation associated with the paper "AutoURDF: Unsupervised Robot Modeling from Point Cloud Frames Using Cluster Registration".
+
+<!-- ## Pipeline
+
+![Teaser image](assets/pipeline.png) -->
+
+## Run
+
+### Environment
+
 ```
 conda create -n autourdf python=3.9
+
 conda activate autourdf
+
+pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu124
+
+pip install -r requirements.txt
+
 ```
-### 1. Pytorch, Pytorch3D
-V2URDF is implemented using pytorch and [pytorch3D](https://github.com/facebookresearch/pytorch3d/tree/main).\
+
 For pytroch3D installation, please follow this instruction: [pytorch3D installation](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md).
 
-On my computer:
-* Ubuntu 22.04
-* Python 3.9
-* cuda 12.4
-* Pytorch 2.4.1
 
-Install pytorch:
+### Data Collection
 
-```
-pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu124
-```
-### 2. Other packages
-We also used open3d, pybullet ...
-```
-pip install -r requirements.txt
-```
-TODO
-
-## Example
-### 1. Collect point cloud sequences, by default wx200_5, 5 sequences
+Collect point cloud sequences, by default wx200_5, 5 sequences
 ```
 bash dataset.sh
 ```
 
-### 2. Registration, by default wx200_5, run 5 sequences
+### Train Registration Model
+
+Registration, by default wx200_5, run 5 sequences
 ```
 bash registration.sh
 ```
 
-### 3. Output URDF, by default wx200_5, run 1 or 5 sequences, given DoF infomation
-with 5 sequences, 50 frames
-```
-python PointCloud/coord_map.py --robot wx200_5
-```
-with only 1 sequence, 10 frames
-```
-python PointCloud/coord_map.py --robot wx200_5 --end_video 1
-```
+### URDF Results
 
-### 4. Output URDF, by default wx200_5, run 1 or 5 sequences, unknown DoF infomation
+Output URDF, by default wx200_5, run 1 or 5 sequences, unknown DoF infomation
 with 5 sequences, 50 frames
 ```
 python PointCloud/coord_map.py --robot wx200_5 --unknown_dof
@@ -56,4 +52,21 @@ python PointCloud/coord_map.py --robot wx200_5 --unknown_dof
 with only 1 sequence, 10 frames
 ```
 python PointCloud/coord_map.py --robot wx200_5 --end_video 1 --unknown_dof
+```
+
+
+## Acknowledgments
+
+We sincerely thank [Changxi Zheng](https://www.cs.columbia.edu/~cxz/) and [Ruoshi Liu](https://ruoshiliu.github.io/) for their invaluable feedback.
+
+
+## BibTex
+
+```
+@article{lin2024autourdf,
+  title={AutoURDF: Unsupervised Robot Modeling from Point Cloud Frames Using Cluster Registration},
+  author={Lin, Jiong and Zhang, Lechen and Lee, Kwansoo and Ning, Jialong and Goldfeder, Judah and Lipson, Hod},
+  journal={arXiv preprint arXiv:2412.05507},
+  year={2024}
+}
 ```
