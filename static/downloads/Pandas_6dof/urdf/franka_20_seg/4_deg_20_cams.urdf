@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="estimated_robot">
+  <link name="link_0">
+    <visual>
+      <origin xyz="-0.035793636 -0.0020284033 0.04541959" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0000.stl" scale="1 1 1" />
+      </geometry>
+      <material name="material_0">
+        <color rgba="0.0 0.0 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.035793636 -0.0020284033 0.04541959" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0000.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.035793636 -0.0020284033 0.04541959" rpy="0.0 0.0 0.0" />
+      <mass value="1.0" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+    </inertial>
+  </link>
+  <link name="link_5">
+    <visual>
+      <origin xyz="0.002048420655780603 -0.03723051564280817 0.11086332507581731" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0005.stl" scale="1 1 1" />
+      </geometry>
+      <material name="material_5">
+        <color rgba="1.0 0.7269426289034134 0.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.002048420655780603 -0.03723051564280817 0.11086332507581731" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0005.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.002048420655780603 -0.03723051564280817 0.11086332507581731" rpy="0.0 0.0 0.0" />
+      <mass value="1.0" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+    </inertial>
+  </link>
+  <link name="link_2">
+    <visual>
+      <origin xyz="-0.0018068839789358916 0.0313126643406316 0.06186579036896239" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0002.stl" scale="1 1 1" />
+      </geometry>
+      <material name="material_2">
+        <color rgba="0.0 0.6450980392156863 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0018068839789358916 0.0313126643406316 0.06186579036896239" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0002.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.0018068839789358916 0.0313126643406316 0.06186579036896239" rpy="0.0 0.0 0.0" />
+      <mass value="1.0" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+    </inertial>
+  </link>
+  <link name="link_6">
+    <visual>
+      <origin xyz="0.02083810174865751 0.008324359682938988 0.10351343494835591" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0006.stl" scale="1 1 1" />
+      </geometry>
+      <material name="material_6">
+        <color rgba="1.0 0.18954248366013093 0.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.02083810174865751 0.008324359682938988 0.10351343494835591" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0006.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.02083810174865751 0.008324359682938988 0.10351343494835591" rpy="0.0 0.0 0.0" />
+      <mass value="1.0" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+    </inertial>
+  </link>
+  <link name="link_4">
+    <visual>
+      <origin xyz="0.019803814432961378 -0.01865634181726611 0.0420605299597695" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0004.stl" scale="1 1 1" />
+      </geometry>
+      <material name="material_4">
+        <color rgba="0.7179000632511068 1.0 0.2498418722327641 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.019803814432961378 -0.01865634181726611 0.0420605299597695" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0004.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.019803814432961378 -0.01865634181726611 0.0420605299597695" rpy="0.0 0.0 0.0" />
+      <mass value="1.0" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+    </inertial>
+  </link>
+  <link name="link_1">
+    <visual>
+      <origin xyz="0.09340904642218179 0.04428915941647639 0.020050088694056112" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0001.stl" scale="1 1 1" />
+      </geometry>
+      <material name="material_1">
+        <color rgba="0.0 0.06470588235294118 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.09340904642218179 0.04428915941647639 0.020050088694056112" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0001.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.09340904642218179 0.04428915941647639 0.020050088694056112" rpy="0.0 0.0 0.0" />
+      <mass value="1.0" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+    </inertial>
+  </link>
+  <link name="link_3">
+    <visual>
+      <origin xyz="0.05986728450959289 -0.019637473407288525 0.009781589918310796" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0003.stl" scale="1 1 1" />
+      </geometry>
+      <material name="material_3">
+        <color rgba="0.24984187223276405 1.0 0.717900063251107 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.05986728450959289 -0.019637473407288525 0.009781589918310796" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh filename="mesh/franka_20_seg/4_deg_20_cams/V0000/0003.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.05986728450959289 -0.019637473407288525 0.009781589918310796" rpy="0.0 0.0 0.0" />
+      <mass value="1.0" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+    </inertial>
+  </link>
+  <joint name="joint_5" type="revolute">
+    <parent link="link_0" />
+    <child link="link_5" />
+    <origin xyz="-0.0017153259192194265 0.002218799455807892 0.13196826271562556" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.018379144823008068 0.03272425491659404 0.9992954168691702" />
+    <limit effort="100" velocity="100" lower="-3.14159" upper="3.14159" />
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <parent link="link_5" />
+    <child link="link_2" />
+    <origin xyz="0.002167163142521067 -5.965595895322806e-05 0.18423275490071783" rpy="0.0 0.0 0.0" />
+    <axis xyz="-0.018700596836551293 0.9574236576615931 0.2880802447719272" />
+    <limit effort="100" velocity="100" lower="-3.14159" upper="3.14159" />
+  </joint>
+  <joint name="joint_6" type="revolute">
+    <parent link="link_2" />
+    <child link="link_6" />
+    <origin xyz="0.009646046995557747 0.009964125392789548 0.17461073225738322" rpy="0.0 0.0 0.0" />
+    <axis xyz="0.06231475657273211 -0.021573813240505557 0.9978233519494045" />
+    <limit effort="100" velocity="100" lower="-3.14159" upper="3.14159" />
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <parent link="link_6" />
+    <child link="link_4" />
+    <origin xyz="0.07634256738135184 -0.02646035920676798 0.16506121521121214" rpy="0.0 0.0 0.0" />
+    <axis xyz="-0.0020883777194975555 -0.9958770527463824 0.09068921926932566" />
+    <limit effort="100" velocity="100" lower="-3.14159" upper="3.14159" />
+  </joint>
+  <joint name="joint_1" type="revolute">
+    <parent link="link_4" />
+    <child link="link_1" />
+    <origin xyz="0.14213094855467912 0.02287928265769694 0.1009431438070647" rpy="0.0 0.0 0.0" />
+    <axis xyz="-0.9855081489906251 -0.07278138763018795 -0.15322061835045642" />
+    <limit effort="100" velocity="100" lower="-3.14159" upper="3.14159" />
+  </joint>
+  <joint name="joint_3" type="revolute">
+    <parent link="link_1" />
+    <child link="link_3" />
+    <origin xyz="0.2187790801899479 0.00362708869424426 0.03396033179500191" rpy="0.0 0.0 0.0" />
+    <axis xyz="-0.008479032620730074 0.9996982099056237 0.02305634657329932" />
+    <limit effort="100" velocity="100" lower="-3.14159" upper="3.14159" />
+  </joint>
+</robot>

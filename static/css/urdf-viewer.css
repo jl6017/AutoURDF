@@ -1,0 +1,155 @@
+/* URDF Viewer Styles */
+
+#joint-control-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+    font-family: 'Google Sans', 'Noto Sans', sans-serif;
+}
+
+#joint-control-panel h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+#joint-control-panel button {
+    background-color: #3273dc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#joint-control-panel button:hover {
+    background-color: #276cda;
+}
+
+#joint-control-panel label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+#joint-control-panel input[type="range"] {
+    width: 100%;
+    margin: 5px 0;
+}
+
+#joint-control-panel input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.joint-slider-container {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.joint-slider-container:last-child {
+    border-bottom: none;
+}
+
+.joint-slider-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.joint-slider-label span {
+    font-weight: bold;
+    color: #333;
+}
+
+.joint-value-display {
+    font-family: monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    min-width: 60px;
+    text-align: right;
+}
+
+#urdf-container {
+    position: relative;
+}
+
+/* Controller visualization styles */
+.joint-controller-revolute {
+    cursor: pointer;
+}
+
+.joint-controller-prismatic {
+    cursor: ns-resize;
+}
+
+/* Option toggles */
+.options-section {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+.options-section label {
+    margin-bottom: 8px;
+}
+
+.options-section label:last-child {
+    margin-bottom: 0;
+}
+
+/* Reset button */
+.reset-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: #f14668;
+    color: white;
+}
+
+.reset-button:hover {
+    background-color: #e03d5a;
+}
+
+.joint-tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translate(0, -100%);
+    margin-top: -5px;
+    white-space: nowrap;
+    font-family: 'Google Sans', 'Noto Sans', sans-serif;
+}
+
+.joint-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(0, 0, 0, 0.8);
+} 
