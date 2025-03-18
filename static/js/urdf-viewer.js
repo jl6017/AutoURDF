@@ -263,7 +263,7 @@ class URDFViewer {
         loader.loadMeshCb = (path, manager, done) => {
             console.log('Loading mesh from path:', path);
             // Extract the robot type from the URDF path
-            let robotType = urdfPath.split('/')[3]; // This gets e.g. "wx200_5dof"
+            let robotType = urdfPath.split('/')[4]; // Updated index to account for /AutoURDF/ in path
             
             // Handle the path differently based on the mesh path structure
             let relativePath;
@@ -273,7 +273,7 @@ class URDFViewer {
                 relativePath = path.split('/').pop();
             }
             
-            const absolutePath = window.location.origin + '/static/urdf/' + robotType + '/urdf/mesh/' + relativePath;
+            const absolutePath = window.location.origin + '/AutoURDF/static/urdf/' + robotType + '/urdf/mesh/' + relativePath;
             console.log('Constructed absolute path:', absolutePath);
             
             const stlLoader = new STLLoader(manager);
@@ -298,9 +298,9 @@ class URDFViewer {
         };
 
         // Extract the robot type for the packages path
-        const robotType = urdfPath.split('/')[3]; // e.g., "wx200_5dof"
+        const robotType = urdfPath.split('/')[4]; // Updated index to account for /AutoURDF/ in path
         loader.packages = {
-            "": window.location.origin + "/static/urdf/" + robotType + "/urdf/"
+            "": window.location.origin + "/AutoURDF/static/urdf/" + robotType + "/urdf/"
         };
 
         // Load the URDF
@@ -574,32 +574,32 @@ function initializeButtons() {
 
     wx200Button.addEventListener('click', () => {
         console.log('Loading WX200 URDF...');
-        viewer.loadURDF('/static/urdf/wx200_5dof/urdf/robot.urdf');
+        viewer.loadURDF('/AutoURDF/static/urdf/wx200_5dof/urdf/robot.urdf');
     });
 
     // wx200rButton.addEventListener('click', () => {
     //     console.log('Loading WX200 Real-world URDF...');
-    //     viewer.loadURDF('/static/urdf/wx200_real_5dof/urdf/robot.urdf');
+    //     viewer.loadURDF('/AutoURDF/static/urdf/wx200_real_5dof/urdf/robot.urdf');
     // });
 
     ur5Button.addEventListener('click', () => {
         console.log('Loading UR5e URDF...');
-        viewer.loadURDF('/static/urdf/UR5e_5dof/urdf/robot.urdf');
+        viewer.loadURDF('/AutoURDF/static/urdf/UR5e_5dof/urdf/robot.urdf');
     });
 
     pandaButton.addEventListener('click', () => {
         console.log('Loading Panda URDF...');
-        viewer.loadURDF('/static/urdf/Pandas_6dof/urdf/robot.urdf');
+        viewer.loadURDF('/AutoURDF/static/urdf/Pandas_6dof/urdf/robot.urdf');
     });
 
     pxButton.addEventListener('click', () => {
         console.log('Loading PhantomX URDF...');
-        viewer.loadURDF('/static/urdf/pxs_18dof/urdf/robot.urdf');
+        viewer.loadURDF('/AutoURDF/static/urdf/pxs_18dof/urdf/robot.urdf');
     });
 
     // soloButton.addEventListener('click', () => {
     //     console.log('Loading Solo URDF...');
-    //     viewer.loadURDF('/static/urdf/solo_8dof/urdf/robot.urdf');
+    //     viewer.loadURDF('/AutoURDF/static/urdf/solo_8dof/urdf/robot.urdf');
     // });
     
 }
@@ -628,7 +628,7 @@ function initializeViewer() {
         // Auto-load WX200 robot
         console.log('Auto-loading WX200 robot...');
         setTimeout(function() {
-            viewer.loadURDF('/static/urdf/wx200_5dof/urdf/robot.urdf');
+            viewer.loadURDF('/AutoURDF/static/urdf/wx200_5dof/urdf/robot.urdf');
         }, 300);
     } catch (error) {
         console.error('Error initializing URDF viewer:', error);
