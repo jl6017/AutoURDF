@@ -584,12 +584,12 @@ function initializeButtons() {
 
     ur5Button.addEventListener('click', () => {
         console.log('Loading UR5e URDF...');
-        viewer.loadURDF('/static/urdf/ur5e_5dof/urdf/robot.urdf');
+        viewer.loadURDF('/static/urdf/UR5e_5dof/urdf/robot.urdf');
     });
 
     pandaButton.addEventListener('click', () => {
         console.log('Loading Panda URDF...');
-        viewer.loadURDF('/static/urdf/pandas_6dof/urdf/robot.urdf');
+        viewer.loadURDF('/static/urdf/Pandas_6dof/urdf/robot.urdf');
     });
 
     pxButton.addEventListener('click', () => {
