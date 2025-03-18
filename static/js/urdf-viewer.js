@@ -23,7 +23,9 @@ import {
     DoubleSide,
     CylinderGeometry,
     Group,
-    ArrowHelper
+    ArrowHelper,
+    CanvasTexture,
+    RepeatWrapping
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import URDFLoader from 'URDFLoader';
@@ -60,22 +62,59 @@ class URDFViewer {
         this.scene.add(ambientLight);
 
         // Setup PyBullet style ground
-        // Add grid helper for checkerboard effect
-        // const size = 20;
-        // const divisions = 40;  // More divisions for finer grid
-        // const gridHelper = new GridHelper(size, divisions, 0x647d89, 0x647d89);  // PyBullet-style grid color
-        // gridHelper.position.y = 0;
-        // this.scene.add(gridHelper);
-
-        // Setup ground plane beneath the grid
-        const groundGeometry = new PlaneGeometry(50, 50);
-        const groundMaterial = new MeshPhongMaterial({ 
-            color: 0xbfd1de,  // PyBullet-style light blue-gray
+        // Create a proper PyBullet-style checkerboard ground
+        const groundSize = 30; // Large ground plane
+        const groundGeometry = new PlaneGeometry(groundSize, groundSize, 1, 1);
+        
+        // PyBullet's exact colors
+        const darkColor = new Color(0.18, 0.31, 0.31); // Dark teal-ish
+        const lightColor = new Color(0.7, 0.7, 0.7);   // Light gray
+        
+        // Create a checkerboard pattern in the material
+        const groundMaterial = new MeshPhongMaterial({
+            vertexColors: false,
             shininess: 0
         });
+        
+        // Set UV coordinates for proper texture mapping
+        groundGeometry.computeBoundingBox();
+        
+        // Create checkerboard texture programmatically
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        const context = canvas.getContext('2d');
+        
+        // Draw the checkerboard pattern
+        const squareSize = 64; // Size of each checkerboard square
+        for (let x = 0; x < canvas.width; x += squareSize) {
+            for (let y = 0; y < canvas.height; y += squareSize) {
+                // Determine color based on position to create checkerboard
+                const isEvenRow = Math.floor(x / squareSize) % 2 === 0;
+                const isEvenCol = Math.floor(y / squareSize) % 2 === 0;
+                
+                if (isEvenRow === isEvenCol) {
+                    context.fillStyle = '#2a5698'; // Lighter, more vibrant blue
+                } else {
+                    context.fillStyle = '#b3b3b3'; // Light gray
+                }
+                
+                context.fillRect(x, y, squareSize, squareSize);
+            }
+        }
+        
+        // Create texture from canvas
+        const texture = new CanvasTexture(canvas);
+        texture.wrapS = RepeatWrapping;
+        texture.wrapT = RepeatWrapping;
+        texture.repeat.set(5, 5); // Adjust repetition to match PyBullet scale
+        
+        // Apply texture to material
+        groundMaterial.map = texture;
+        
         const ground = new Mesh(groundGeometry, groundMaterial);
         ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.001; // Slightly below grid to prevent z-fighting
+        ground.position.y = 0;
         ground.receiveShadow = true;
         this.scene.add(ground);
 
