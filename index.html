@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.152.0/build/three.module.js",
+        "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.152.0/examples/jsm/controls/OrbitControls.js",
+        "three/examples/jsm/loaders/STLLoader": "https://unpkg.com/three@0.152.0/examples/jsm/loaders/STLLoader.js",
+        "three/examples/jsm/loaders/STLLoader.js": "https://unpkg.com/three@0.152.0/examples/jsm/loaders/STLLoader.js",
+        "three/build/three.module.js": "https://unpkg.com/three@0.152.0/build/three.module.js",
+        "three/examples/jsm/loaders/ColladaLoader": "https://unpkg.com/three@0.152.0/examples/jsm/loaders/ColladaLoader.js",
+        "three/examples/jsm/loaders/ColladaLoader.js": "https://unpkg.com/three@0.152.0/examples/jsm/loaders/ColladaLoader.js",
+        "three/examples/jsm/loaders/OBJLoader": "https://unpkg.com/three@0.152.0/examples/jsm/loaders/OBJLoader.js",
+        "three/examples/jsm/loaders/OBJLoader.js": "https://unpkg.com/three@0.152.0/examples/jsm/loaders/OBJLoader.js",
+        "URDFLoader": "https://unpkg.com/urdf-loader@0.12.4/src/URDFLoader.js"
+      }
+    }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GETVCQ90R"></script>
   <script>
@@ -1742,6 +1758,21 @@ model-viewer {
 
 </script>
 
+<section class="section" id="urdf-viewer">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Interactive URDF Viewer</h2>
+        <div id="urdf-container" style="width: 100%; height: 500px; border: 1px solid #ccc; border-radius: 8px;"></div>
+        <div style="margin-top: 20px;">
+          <button id="load-wx200" class="button is-info is-rounded">Load WX200</button>
+          <button id="load-ur5" class="button is-info is-rounded">Load UR5e</button>
+          <button id="load-panda" class="button is-info is-rounded">Load Panda</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
@@ -1769,5 +1800,9 @@ model-viewer {
     }
   });
 </script>
+
+<!-- Add URDF viewer script here -->
+<script type="module" src="./static/js/urdf-viewer.js"></script>
+
 </body>
 </html>
