@@ -558,6 +558,19 @@ class URDFViewer {
 
 let viewer = null;  // Keep track of viewer instance
 
+function updateURDFButtonStates(activeButtonId) {
+    // Remove active class from all URDF buttons
+    document.querySelectorAll('.urdf-button').forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Add active class to the clicked button
+    const activeButton = document.getElementById(activeButtonId);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+}
+
 function initializeButtons() {
     const wx200Button = document.getElementById('load-wx200');
     // const wx200rButton = document.getElementById('load-wx200r');
@@ -573,6 +586,7 @@ function initializeButtons() {
     }
 
     wx200Button.addEventListener('click', () => {
+        updateURDFButtonStates('load-wx200');
         console.log('Loading WX200 URDF...');
         viewer.loadURDF('/AutoURDF/static/urdf/wx200_5dof/urdf/robot.urdf');
     });
@@ -583,16 +597,19 @@ function initializeButtons() {
     // });
 
     ur5Button.addEventListener('click', () => {
+        updateURDFButtonStates('load-ur5');
         console.log('Loading UR5e URDF...');
         viewer.loadURDF('/AutoURDF/static/urdf/UR5e_5dof/urdf/robot.urdf');
     });
 
     pandaButton.addEventListener('click', () => {
+        updateURDFButtonStates('load-panda');
         console.log('Loading Panda URDF...');
         viewer.loadURDF('/AutoURDF/static/urdf/Pandas_6dof/urdf/robot.urdf');
     });
 
     pxButton.addEventListener('click', () => {
+        updateURDFButtonStates('load-pxs');
         console.log('Loading PhantomX URDF...');
         viewer.loadURDF('/AutoURDF/static/urdf/pxs_18dof/urdf/robot.urdf');
     });
