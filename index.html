@@ -175,6 +175,15 @@
 
     </div>
 
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <img src="static/images/overview.svg" style="max-width: 700px; margin-bottom: 20px;">
+        <p align="left">
+          Our method provides a complete pipeline for the automated construction of robot description files. (A). Data Collection: By commanding robots with randomly sampled motor angle sequences, we capture the corresponding time-series point cloud frames. (B). Three Substeps: We tackle the problem in three substeps: 1) part segmentation, 2) body topology inference, and 3) joint parameter estimation. (C). Description File Generation: The final output is a URDF file that defines the robot's links, joints, and collision properties. We successfully build and simulate the description model for the WX200 robot arm in PyBullet with new motor configurations.        </p>
+      </div>
+    </div>
+
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -194,17 +203,9 @@
     </div>
     <!--/ Abstract. -->
 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
-        <img src="static/images/overview.svg" style="max-width: 700px">
-        <p align="left">
-          Our method provides a complete pipeline for the automated construction of robot description files. (A). Data Collection: By commanding robots with randomly sampled motor angle sequences, we capture the corresponding time-series point cloud frames. (B). Three Substeps: We tackle the problem in three substeps: 1) part segmentation, 2) body topology inference, and 3) joint parameter estimation. (C). Description File Generation: The final output is a URDF file that defines the robot's links, joints, and collision properties. We successfully build and simulate the description model for the WX200 robot arm in PyBullet with new motor configurations.        </p>
-      </div>
-    </div>
-
 
     <center>
+      <h2 class="title is-3">Video</h2>
       <video style="text-align:center; width:80%" id="v3" autoplay muted loop playsinline controls height="100%">
         <source src="static/videos/video_ppt3.mp4" type="video/mp4">
       </video>
