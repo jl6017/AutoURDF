@@ -233,9 +233,9 @@
     <div class="columns is-centered">
       <div class="column has-text-centered">
         <h2 class="title is-3">Interactive URDF Viewer</h2>
-        <p class="subtitle">Explore and manipulate generated robot models with joint controls</p>
+        <p class="subtitle">Explore and manipulate the generated robot models by our method</p>
         <div id="urdf-container" style="width: 100%; height: 700px; border: 1px solid #ccc; border-radius: 8px; position: relative;"></div>
-        <div style="margin-top: 20px;">
+        <div style="margin-top: 30px;">
           <button id="load-wx200" class="urdf-button active">Load WX200</button>
           <button id="load-ur5" class="urdf-button">Load UR5e</button>
           <button id="load-panda" class="urdf-button">Load Pandas</button>
@@ -260,8 +260,8 @@ model-viewer {
     margin-top: 20px;
     padding-top: 40px;
     border-top: 1px solid #eee;
-    margin-bottom: 20px;  /* Add significant space after the joint estimation section */
-    padding-bottom: 40px;  /* Add some padding inside the section */
+    margin-bottom: 10px;  /* Add significant space after the joint estimation section */
+    padding-bottom: 20px;  /* Add some padding inside the section */
     border-bottom: 1px solid #eee;  /* Optional: adds a subtle divider */
 }
 
@@ -861,7 +861,7 @@ model-viewer {
       margin-top: 20px;
       text-align: center;
       width: 950px; 
-      height: 600px; 
+      height: 500px; 
       margin-left: auto;
       margin-right: auto;
       border: 1px solid #ddd; 
@@ -872,7 +872,7 @@ model-viewer {
     /* model viewer size */
     .file-content model-viewer {
       width: 100%; 
-      height: 95%; 
+      height: 100%; 
     }
   </style>
 </head>
@@ -881,18 +881,6 @@ model-viewer {
   <div class="joint-estimation-section">
     <div class="title">Joint Estimation</div>
     <!-- file-names B -->
-    <div id="file-names">
-      <span class="file-name button is-normal is-rounded" onclick="showFile('file1')">WX200 Real-World</span>
-      <span class="file-name button is-normal is-rounded" onclick="showFile('file2')">WX200</span>
-      <span class="file-name button is-normal is-rounded" onclick="showFile('file3')">PhantomX</span>
-      <span class="file-name button is-normal is-rounded" onclick="showFile('file4')">Pandas</span>
-      <span class="file-name button is-normal is-rounded" onclick="showFile('file5')">UR5e</span>
-      <span class="file-name button is-normal is-rounded" onclick="showFile('file6')">Bolt</span>
-      <span class="file-name button is-normal is-rounded" onclick="showFile('file7')">OP3</span>
-      <span class="file-name button is-normal is-rounded" onclick="showFile('file8')">Solo</span>
-      <span class="file-name button is-normal is-rounded" onclick="showFile('file9')">Allegro</span>
-    </div>
-
 
     <div id="file1" class="file-content">
       <model-viewer id="m1" src="static/models/joint_glb_smallpoint/wx200_real_5_500_sp.glb"
@@ -965,6 +953,18 @@ model-viewer {
         auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y">
       </model-viewer>
       <p>Allegro</p>
+    </div>
+
+    <div id="file-names" style="margin-top: 30px;">
+      <span class="file-name button is-normal is-rounded" onclick="showFile('file1')">WX200 Real-World</span>
+      <span class="file-name button is-normal is-rounded" onclick="showFile('file2')">WX200</span>
+      <span class="file-name button is-normal is-rounded" onclick="showFile('file3')">PhantomX</span>
+      <span class="file-name button is-normal is-rounded" onclick="showFile('file4')">Pandas</span>
+      <span class="file-name button is-normal is-rounded" onclick="showFile('file5')">UR5e</span>
+      <span class="file-name button is-normal is-rounded" onclick="showFile('file6')">Bolt</span>
+      <span class="file-name button is-normal is-rounded" onclick="showFile('file7')">OP3</span>
+      <span class="file-name button is-normal is-rounded" onclick="showFile('file8')">Solo</span>
+      <span class="file-name button is-normal is-rounded" onclick="showFile('file9')">Allegro</span>
     </div>
 
     <script>
