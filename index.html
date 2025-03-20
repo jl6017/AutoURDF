@@ -236,10 +236,10 @@
         <p class="subtitle">Explore and manipulate generated robot models with joint controls</p>
         <div id="urdf-container" style="width: 100%; height: 700px; border: 1px solid #ccc; border-radius: 8px; position: relative;"></div>
         <div style="margin-top: 20px;">
-          <button id="load-wx200" class="button is-info is-rounded">Load WX200</button>
-          <button id="load-ur5" class="button is-normal is-rounded">Load UR5e</button>
-          <button id="load-panda" class="button is-normal is-rounded">Load Pandas</button>
-          <button id="load-pxs" class="button is-normal is-rounded">Load PhantomX</button>
+          <button id="load-wx200" class="urdf-button active">Load WX200</button>
+          <button id="load-ur5" class="urdf-button">Load UR5e</button>
+          <button id="load-panda" class="urdf-button">Load Pandas</button>
+          <button id="load-pxs" class="urdf-button">Load PhantomX</button>
         </div>
       </div>
     </div>
@@ -318,6 +318,29 @@ model-viewer {
 .file-content model-viewer {
     width: 100%; 
     height: 95%; 
+}
+
+/* Add these styles to match joint estimation buttons */
+.urdf-button {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 290486px;
+  text-align: center;
+  font-size: 16px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  color: #363636;
+}
+
+.urdf-button:hover {
+  background-color: #f5f5f5;
+  border-color: #b5b5b5;
+}
+
+.urdf-button.active {
+  background-color: #3273dc; /* Bulma's is-info color */
+  border-color: transparent;
+  color: #ffffff;
 }
 </style>
 
