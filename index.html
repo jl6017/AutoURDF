@@ -344,6 +344,50 @@ model-viewer {
   border-color: transparent;
   color: #ffffff;
 }
+
+/* Add this CSS first */
+.comparison-row {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
+.media-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-wrapper {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gif-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gif-wrapper img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+.label-text {
+    margin-top: 20px;
+}
 </style>
 
 <!-- <section class="hero">
@@ -401,20 +445,23 @@ model-viewer {
         <div class="column is-half">
           <div class='title is-5'>Real-world Scan, WX200</div>
           <div class="has-text-centered">
-            <div class='columns is-vcentered'>
-              <div class="column">
-                <span style="display: inline-block;">
-                  <img src="./static/videos/gif/wx200_real_5_steps_magick.gif" style="width: auto; height: 200px;">
-                </span>
-                <div class="title is-6", style="margin-top: 20px;">Input</div>
+            <div class='columns is-vcentered comparison-row'>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <div class="gif-wrapper">
+                    <img src="./static/videos/gif/wx200_real_5_steps_magick.gif" alt="Input">
+                  </div>
+                </div>
+                <div class="title is-6 label-text">Input</div>
               </div>
-              <div class="column">
-                <model-viewer id="m1" src="static/models/real9.glb"
-                  shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
-                  auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y"
-                  style="width: 100%; height: 200px;">
-                </model-viewer>
-                <div class="title is-6", style="margin-top: 20px;">Output</div>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <model-viewer id="m1" src="static/models/real9.glb"
+                    shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
+                    auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y">
+                  </model-viewer>
+                </div>
+                <div class="title is-6 label-text">Output</div>
               </div>
             </div>
           </div>
@@ -423,20 +470,23 @@ model-viewer {
         <div class="column is-half">
           <div class='title is-5'>WX200</div>
           <div class="has-text-centered">
-            <div class='columns is-vcentered'>
-              <div class="column">
-                <span style="display: inline-block;">
-                  <img src="./static/videos/gif/wx200_5_steps_magick.gif" style="width: auto; height: 200px;">
-                </span>
-                <div class="title is-6", style="margin-top: 20px;">Input</div>
+            <div class='columns is-vcentered comparison-row'>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <div class="gif-wrapper">
+                    <img src="./static/videos/gif/wx200_5_steps_magick.gif" alt="Input">
+                  </div>
+                </div>
+                <div class="title is-6 label-text">Input</div>
               </div>
-              <div class="column">
-                <model-viewer id="m2" src="static/models/wx200_5_9.glb"
-                  shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
-                  auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y"
-                  style="width: 100%; height: 200px;">
-                </model-viewer>
-                <div class="title is-6", style="margin-top: 20px;">Output</div>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <model-viewer id="m2" src="static/models/wx200_5_9.glb"
+                    shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
+                    auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y">
+                  </model-viewer>
+                </div>
+                <div class="title is-6 label-text">Output</div>
               </div>
             </div>
           </div>
@@ -446,20 +496,23 @@ model-viewer {
         <div class="column is-half">
           <div class='title is-5'>PhantomX</div>
           <div class="has-text-centered">
-            <div class='columns is-vcentered'>
-              <div class="column">
-                <span style="display: inline-block;">
-                  <img src="./static/videos/gif/pxs_steps_magick.gif" style="width: auto; height: 200px;">
-                </span>
-                <div class="title is-6", style="margin-top: 20px;">Input</div>
+            <div class='columns is-vcentered comparison-row'>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <div class="gif-wrapper">
+                    <img src="./static/videos/gif/pxs_steps_magick.gif" alt="Input">
+                  </div>
+                </div>
+                <div class="title is-6 label-text">Input</div>
               </div>
-              <div class="column">
-                <model-viewer id="m3" src="static/models/pxs9.glb"
-                  shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
-                  auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y"
-                  style="width: 100%; height: 200px;">
-                </model-viewer>
-                <div class="title is-6", style="margin-top: 20px;">Output</div>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <model-viewer id="m3" src="static/models/pxs9.glb"
+                    shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
+                    auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y">
+                  </model-viewer>
+                </div>
+                <div class="title is-6 label-text">Output</div>
               </div>
             </div>
           </div>
@@ -468,20 +521,23 @@ model-viewer {
         <div class="column is-half">
           <div class='title is-5'>Pandas</div>
           <div class="has-text-centered">
-            <div class='columns is-vcentered'>
-              <div class="column">
-                <span style="display: inline-block;">
-                  <img src="./static/videos/gif/franka_steps_magick.gif" style="width: auto; height: 200px;">
-                </span>
-                <div class="title is-6", style="margin-top: 20px;">Input</div>
+            <div class='columns is-vcentered comparison-row'>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <div class="gif-wrapper">
+                    <img src="./static/videos/gif/franka_steps_magick.gif" alt="Input">
+                  </div>
+                </div>
+                <div class="title is-6 label-text">Input</div>
               </div>
-              <div class="column">
-                <model-viewer id="m4" src="static/models/franka9.glb"
-                  shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
-                  auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y"
-                  style="width: 100%; height: 200px;">
-                </model-viewer>
-                <div class="title is-6", style="margin-top: 20px;">Output</div>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <model-viewer id="m4" src="static/models/franka9.glb"
+                    shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
+                    auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y">
+                  </model-viewer>
+                </div>
+                <div class="title is-6 label-text">Output</div>
               </div>
             </div>
           </div>
@@ -500,20 +556,23 @@ model-viewer {
           <div class="column is-half">
             <div class='title is-5'>UR5e</div>
             <div class="has-text-centered">
-              <div class='columns is-vcentered'>
-                <div class="column">
-                  <span style="display: inline-block;">
-                    <img src="./static/videos/gif/ur5_steps_magick.gif" style="width: auto; height: 200px;">
-                  </span>
-                  <div class="title is-6", style="margin-top: 20px;">Input</div>
+              <div class='columns is-vcentered comparison-row'>
+                <div class="column media-container">
+                  <div class="content-wrapper">
+                    <div class="gif-wrapper">
+                      <img src="./static/videos/gif/ur5_steps_magick.gif" alt="Input">
+                    </div>
+                  </div>
+                  <div class="title is-6 label-text">Input</div>
                 </div>
-                <div class="column">
-                  <model-viewer id="m5" src="static/models/ur59.glb"
-                    shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
-                    auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y"
-                    style="width: 100%; height: 200px;">
-                  </model-viewer>
-                  <div class="title is-6", style="margin-top: 20px;">Output</div>
+                <div class="column media-container">
+                  <div class="content-wrapper">
+                    <model-viewer id="m5" src="static/models/ur59.glb"
+                      shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
+                      auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y">
+                    </model-viewer>
+                  </div>
+                  <div class="title is-6 label-text">Output</div>
                 </div>
               </div>
             </div>
@@ -522,20 +581,23 @@ model-viewer {
           <div class="column is-half">
             <div class='title is-5'>Solo</div>
             <div class="has-text-centered">
-              <div class='columns is-vcentered'>
-                <div class="column">
-                  <span style="display: inline-block;">
-                    <img src="./static/videos/gif/solo8_steps_magick.gif" style="width: auto; height: 200px;">
-                  </span>
-                  <div class="title is-6", style="margin-top: 20px;">Input</div>
+              <div class='columns is-vcentered comparison-row'>
+                <div class="column media-container">
+                  <div class="content-wrapper">
+                    <div class="gif-wrapper">
+                      <img src="./static/videos/gif/solo8_steps_magick.gif" alt="Input">
+                    </div>
+                  </div>
+                  <div class="title is-6 label-text">Input</div>
                 </div>
-                <div class="column">
-                  <model-viewer id="m6" src="static/models/solo89.glb"
-                    shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
-                    auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y"
-                    style="width: 100%; height: 200px;">
-                  </model-viewer>
-                  <div class="title is-6", style="margin-top: 20px;">Output</div>
+                <div class="column media-container">
+                  <div class="content-wrapper">
+                    <model-viewer id="m6" src="static/models/solo89.glb"
+                      shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
+                      auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y">
+                    </model-viewer>
+                  </div>
+                  <div class="title is-6 label-text">Output</div>
                 </div>
               </div>
             </div>
@@ -550,20 +612,23 @@ model-viewer {
         <div class="column is-half">
           <div class='title is-5'>Laptop</div>
           <div class="has-text-centered">
-            <div class='columns is-vcentered'>
-              <div class="column">
-                <span style="display: inline-block;">
-                  <img src="./static/videos/gif/laptop_steps_magick.gif" style="width: auto; height: 200px;">
-                </span>
-                <div class="title is-6", style="margin-top: 20px;">Input</div>
+            <div class='columns is-vcentered comparison-row'>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <div class="gif-wrapper">
+                    <img src="./static/videos/gif/laptop_steps_magick.gif" alt="Input">
+                  </div>
+                </div>
+                <div class="title is-6 label-text">Input</div>
               </div>
-              <div class="column">
-                <model-viewer id="m7" src="static/models/laptop9.glb"
-                  shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
-                  auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y"
-                  style="width: 100%; height: 200px;">
-                </model-viewer>
-                <div class="title is-6", style="margin-top: 20px;">Output</div>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <model-viewer id="m7" src="static/models/laptop9.glb"
+                    shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
+                    auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y">
+                  </model-viewer>
+                </div>
+                <div class="title is-6 label-text">Output</div>
               </div>
             </div>
           </div>
@@ -572,21 +637,23 @@ model-viewer {
         <div class="column is-half">
           <div class='title is-5'>Trashcan</div>
           <div class="has-text-centered">
-            <div class='columns is-vcentered'>
-              <div class="column">
-                <span style="display: inline-block;">
-                  <img src="./static/videos/gif/trashcan_steps_magick.gif" style="height: 200px;">
-                </span>
-                <div class="title is-6", style="margin-top: 20px;">Input</div>
+            <div class='columns is-vcentered comparison-row'>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <div class="gif-wrapper">
+                    <img src="./static/videos/gif/trashcan_steps_magick.gif" alt="Input">
+                  </div>
+                </div>
+                <div class="title is-6 label-text">Input</div>
               </div>
-
-              <div class="column">
-                <model-viewer id="m8" src="static/models/trashcan9.glb"
-                  shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
-                  auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y"
-                  style="width: 100%; height: 200px;">
-                </model-viewer>
-                <div class="title is-6", style="margin-top: 20px;">Output</div>
+              <div class="column media-container">
+                <div class="content-wrapper">
+                  <model-viewer id="m8" src="static/models/trashcan9.glb"
+                    shadow-intensity="1" environment-image="static/models/thatch_chapel_2k.hdr"
+                    auto-rotate rotation-per-second="40deg" camera-controls touch-action="pan-y">
+                  </model-viewer>
+                </div>
+                <div class="title is-6 label-text">Output</div>
               </div>
             </div>
           </div>
