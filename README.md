@@ -2,7 +2,7 @@
 
 ## [Project page](https://jl6017.github.io/AutoURDF/) | [Paper](https://arxiv.org/abs/2412.05507)
 
-![Teaser image](assets/rdpoint1.svg)
+![Teaser image](assets/rdp1.svg)
 
 This repository contains the official implementation associated with the paper "AutoURDF: Unsupervised Robot Modeling from Point Cloud Frames Using Cluster Registration".
 
