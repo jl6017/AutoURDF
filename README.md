@@ -2,7 +2,7 @@
 
 ## [Project page](https://jl6017.github.io/AutoURDF/) | [Paper](https://arxiv.org/abs/2412.05507)
 
-![Teaser image](assets/teaser.png)
+![Teaser image](assets/rdpoint1.svg)
 
 This repository contains the official implementation associated with the paper "AutoURDF: Unsupervised Robot Modeling from Point Cloud Frames Using Cluster Registration".
 
@@ -70,3 +70,14 @@ We sincerely thank [Changxi Zheng](https://www.cs.columbia.edu/~cxz/) and [Ruosh
   year={2024}
 }
 ```
+
+## Website Template
+
+Our website template is based on:
+- [BundleSDF](https://github.com/bundlesdf/bundlesdf.github.io)
+- Which in turn was based on [Nerfies](https://nerfies.github.io/)
+
+## Website License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
