@@ -32,14 +32,14 @@ For pytroch3D installation, please follow this instruction: [pytorch3D installat
 
 Collect point cloud sequences, by default wx200_5, 5 sequences
 ```
-bash dataset.sh
+bash scripts/dataset.sh
 ```
 
 ### Train Registration Model
 
 Registration, by default wx200_5, run 5 sequences
 ```
-bash registration.sh
+bash scripts/registration.sh
 ```
 
 ### URDF Results
