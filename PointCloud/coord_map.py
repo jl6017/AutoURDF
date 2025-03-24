@@ -672,7 +672,10 @@ def main(vis_params):
 
     plt.figure()
     plt.imshow(1-sum_map, cmap='Blues')
-    plt.colorbar()
+    cbar = plt.colorbar()
+    cbar.set_label('')
+    cbar.set_ticks([])
+    plt.axis('off')
     plt.show()
 
     g0 = cm_list[0].coord_mst()
@@ -683,7 +686,7 @@ def main(vis_params):
         # from 3 to 20 links, include all cases in current dataset
         cluster_idx, g1, s_score_list, nls = silhouette_score_method(cm_list[0].num_coords, sum_map, link_range=test_num_links)
         if len(sub_part_path) == 1:
-            print(sub_part_path[0] + 'score/')
+            print("score folder", sub_part_path[0] + 'score/')
             os.makedirs(sub_part_path[0] + 'score/', exist_ok=True)
             
             with open(sub_part_path[0] + 'score/silhouette_score.txt', 'w') as f:
@@ -694,10 +697,10 @@ def main(vis_params):
         plt.plot(nls, s_score_list)
         plt.xlabel('Number of Links')
         plt.ylabel('Silhouette Score')
-        #plt.show()
+        plt.show()
 
         plt.grid(True)  # Add grid for better readability
-        plt.savefig(sub_part_path[0] + 'score/silhouette_score_plot.png', dpi=300, bbox_inches='tight')
+        # plt.savefig(sub_part_path[0] + 'score/silhouette_score_plot.png', dpi=300, bbox_inches='tight')
         plt.close()  # Close the figure to free memory
 
         dof = len(cluster_idx) - 1 # number of links - 1
