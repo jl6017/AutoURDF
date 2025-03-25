@@ -13,20 +13,27 @@ This repository contains the official implementation associated with the paper "
 ## Run
 
 ### Environment
-
 ```
+# setup a vitural environment
 conda create -n autourdf python=3.9
-
 conda activate autourdf
-
-pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu124
-
-pip install -r requirements.txt
+```
+We used pytorch3D, pybullet, open3d, pyvista.
+#### Prepare
+For pytorch and pytroch3D installation, please follow this instruction: [pytorch3D installation](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md).
+#### On my computer
+```
+Ubuntu 22.04 & CUDA 12.4
+python==3.9
+torch==2.4.1
+torchvision==0.19.1
+pytorch3d==0.7.7
+```
+#### Other packages
 
 ```
-
-For pytroch3D installation, please follow this instruction: [pytorch3D installation](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md).
-
+pip install -r requirements.txt
+```
 
 ### Data Collection
 

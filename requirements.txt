@@ -1,2 +1,17 @@
-open3d
-pybullet
+numpy==1.23.5
+# torch==2.4.1
+# torchvision==0.19.1
+# pytorch3d==0.7.7
+open3d==0.18.0
+pybullet==3.2.6
+matplotlib==3.9.2
+networkx==3.2.1
+scipy==1.13.1
+scikit-learn==1.5.2
+tqdm==4.66.5
+pyvista==0.44.1
+pymeshfix==0.17.0
+mcubes==0.1.6
+transforms3d==0.4.2
+seaborn==0.13.2
+pandas==2.2.3
