@@ -66,9 +66,7 @@ python PointCloud/coord_map.py --robot wx200_5 --end_video 1 --unknown_dof
 Here's a demo of our results:
 
 <div align="center">
-  <video width="100%" src="assets/results.mp4" controls autoplay loop muted>
-    Your browser does not support the video tag.
-  </video>
+  <img src="assets/results.gif" alt="Demo Results" width="100%">
 </div>
 
 
