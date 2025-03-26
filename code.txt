@@ -1,5 +1,0 @@
-# Anonymous GitHub link
-https://github.com/AutoURDF/AutoURDF-Submission
-
-# Anonymous Website link
-https://autourdf.github.io/

@@ -2,7 +2,7 @@
 
 ## [Project page](https://jl6017.github.io/AutoURDF/) | [Paper](https://arxiv.org/abs/2412.05507)
 
-![Teaser image](assets/rdp1.svg)
+![Teaser image](assets/intro.svg)
 
 This repository contains the official implementation associated with the paper "AutoURDF: Unsupervised Robot Modeling from Point Cloud Frames Using Cluster Registration".
 
@@ -60,6 +60,9 @@ with only 1 sequence, 10 frames
 ```
 python PointCloud/coord_map.py --robot wx200_5 --end_video 1 --unknown_dof
 ```
+
+#### Demos
+<video src="assets/results.mp4" controls loop autoplay muted></video>
 
 
 ## Acknowledgments
