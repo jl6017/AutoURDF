@@ -61,10 +61,7 @@ with only 1 sequence, 10 frames
 python PointCloud/coord_map.py --robot wx200_5 --end_video 1 --unknown_dof
 ```
 
-#### Demos
-
-Here's a demo of our results:
-
+#### Robot URDF Demos
 <div align="center">
   <img src="assets/results_hq.gif" alt="Demo Results" width="100%">
 </div>
